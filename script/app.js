@@ -12,7 +12,7 @@ const channels = {
     gmapinoy: {
         number: 2,
         name: "GMA Pinoy TV",
-        url: "https://amg01006-abs-cbn-abscbn-gma-x7-dash-abscbnono-dzsx9.amagi.tv/index.mpd",
+        url: "https://amg01006-abs-cbn-abscbnono-dzsx9.amagi.tv/index.mpd",
         drmConfig: {
             clearKeys: {
                 'c95ed4c44b0b4f7fa1c6ebbbbaab21a1': '47635b8e885e19f2ccbdff078c207058'
@@ -1243,12 +1243,10 @@ let loadingInterval;
 let loadingProgress = 0;
 
 function startLoadingAnimation() {
-    const progressBar = document.getElementById('loading-progress-bar');
     const progressText = document.getElementById('loading-progress-text');
     
     // Reset progress
     loadingProgress = 0;
-    progressBar.style.width = '0%';
     progressText.textContent = '0%';
     
     // Start progress animation
@@ -1258,7 +1256,6 @@ function startLoadingAnimation() {
         const increment = (loadingProgress < 50) ? 5 : (loadingProgress < 80) ? 3 : 1;
         loadingProgress = Math.min(loadingProgress + increment, 99);
         
-        progressBar.style.width = `${loadingProgress}%`;
         progressText.textContent = `${loadingProgress}%`;
         
         // If we reach 99%, stop animation but leave at 99%
@@ -1276,10 +1273,8 @@ function stopLoadingAnimation() {
     }
     
     // Set to 100% when fully loaded or on error
-    const progressBar = document.getElementById('loading-progress-bar');
     const progressText = document.getElementById('loading-progress-text');
-    if (progressBar && progressText) {
-        progressBar.style.width = '100%';
+    if (progressText) {
         progressText.textContent = '100%';
     }
 }
