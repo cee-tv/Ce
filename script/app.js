@@ -70,7 +70,7 @@ const channels = {
         }
     },
     bbcnews: {
-        number: 7,
+        number: 8,
         name: "BBC News",
         url: "https://qp-pldt-live-grp-04-prod.akamaized.net/out/u/bbcworld_news_sd.mpd",
         drmConfig: {
