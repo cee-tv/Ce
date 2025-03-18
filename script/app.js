@@ -1029,8 +1029,8 @@ function changeChannelRelative(direction) {
     let nextChannelNumber = currentChannel.number + direction;
     
     // Handle wraparound
-    if (nextChannelNumber < 1) nextChannelNumber = 70;
-    if (nextChannelNumber > 70) nextChannelNumber = 1;
+    if (nextChannelNumber < 1) nextChannelNumber = Object.keys(channels).length;
+    if (nextChannelNumber > Object.keys(channels).length) nextChannelNumber = 1;
     
     // Find channel by number
     const nextChannel = Object.entries(channels).find(([_, channel]) => 
